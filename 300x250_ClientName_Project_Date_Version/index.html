@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="ad.size" content="width=300,height=250">
+	<title>300x250</title>
+	<!--Include for Doubleclick Ads-->
+    <!-- <script src="https://s0.2mdn.net/ads/studio/Enabler.js" type="text/javascript"></script> -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TimelineLite.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/easing/EasePack.min.js"></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <style type="text/css">
+
+		/*Required Elements
+		====================================================*/
+		/* #TEMP {position: absolute; opacity:0;} */
+		#BG {position:absolute; opacity:1;}
+
+		#linkLayer{
+			left:0px;
+			top:0px;
+			width:300px;
+			height:250px;
+			display:block;
+			position:absolute;
+			overflow: hidden;
+			cursor: pointer; cursor: hand;
+			}
+
+		#container{
+			border:1px solid #000000;
+			background:#fff;
+			margin-left:0px;
+			margin-top:0px;
+			position:absolute;
+			overflow:hidden;
+			width:298px;
+			height:248px;
+			top:0px;
+			left:0px;
+			margin:auto;
+			display:none;
+		}
+
+		/*YOUR CSS
+		=========================================*/
+
+
+
+		/*End YOUR CSS
+		=========================================*/
+	</style>
+
+    <script language="javascript">
+
+    var clickTag = "URL_LINK";
+
+		// DOUBLECLICK LOADER FUNCTION
+		// //Initialize Enabler
+		// if (Enabler.isInitialized()) {
+		// 	init();
+		// } else {
+		// 	Enabler.addEventListener(studio.events.StudioEvent.INIT, init);
+		// }
+		// //Run when Enabler is ready
+		// function init(){
+		// 	//politeInit();
+		// 	//Load in Javascript
+		// 	if(Enabler.isPageLoaded()){
+		// 		politeInit();
+		// 	}else{
+		// 		Enabler.addEventListener(studio.events.StudioEvent.PAGE_LOADED, politeInit);
+		// 	}
+		// }
+
+
+		//DEFAULT LOADER FUNCTION
+		window.onload = function () {
+				console.log("Loading Content...");
+				politeInit();
+		}
+
+		var tl = new TimelineLite();
+
+
+		function politeInit() {
+			document.getElementById("container").style.display="block";
+			console.log("content loaded...");
+			startAni();
+			}
+
+			// Set Elements as Variables
+			function startAni(){
+				var BG = document.getElementById('BG')
+
+
+					//Timeline Function - can set multiple Timelines
+					tl_main = new TimelineLite();
+
+				//ex.
+				 //Frame animations start
+				 //FRAME 01 - IN
+				 //============================================================
+				//  tl_main.to(text1, 1.2, {opacity:1, scaleX:1, scaleY:1, ease: Elastic.easeOut.config(1, 0.8)})
+
+				//  	//FRAME 01 - OUT
+				// 	.to(text1, 1, {opacity:0, scaleX:0.5, scaleY:0.5, ease: Elastic.easeOut.config(1, 0.8)}, '+=1.0')
+
+				//  	//FRAME 02 - IN
+				//  	//=========================================================
+				//  	.to(overlay, 1, {opacity:0, ease: Power1.easeOut}, "-=1.0")
+				//  	.to(text2, 1, {opacity:1, top:"170px", scaleX:1, scaleY:1, ease: Elastic.easeOut.config(1, 0.8)},"-=0.5")
+
+				//  	//FRAME 02 - OUT
+				// 	//========================================================
+				// 	.to(catalina, 0.2, {opacity:0, ease: Power1.easeOut}, "+=1.0")
+				// 	.to(text2, 0.5, {opacity:0, scaleX:0.5, scaleY:0.5, ease: Elastic.easeOut.config(1, 0.8)})
+         
+			}
+
+			/*Clicktag for DC Studio*/
+			// function clickTag() {
+			// 	Enabler.exit('HTML5_Background_Clickthrough');
+			// }
+
+			//DC STUDIO clickTag Event Handler
+			//document.getElementById('linkLayer').addEventListener('click', clickTag, false);
+
+	</script>
+
+</head>
+
+<body>
+    <div id="container">
+    	       	<!--Background Image -->
+    	       	<div id="BG"><img src="BG_NAME"></div>
+				   <!--HTML ELEMENTS HERE-->
+				   
+
+					<!--CTA-->
+					<div id="ctaBtn"><img src="CTA_NAME"></div>
+					<!--=============CLICKTAGS================-->
+					<!--=============DC Clicktag==============-->
+					<!-- <div id="linkLayer"></div> -->
+
+					<!--==========Default ClickTag============-->
+					<a href="javascript:window.open(window.clickTag)"><div id="linkLayer"></div></a>
+    </div>
+</body>
+</html>
